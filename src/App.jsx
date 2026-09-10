@@ -14,7 +14,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 
-const profileImage = '/ChatGPT Image 9 de set. de 2026, 18_47_25.png';
+const profileImage = './perfil.png';
 
 function App() {
   const fadeUp = {
@@ -75,8 +75,8 @@ function App() {
       </nav>
 
       <section id="sobre" className="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pb-20 pt-36">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_0.9fr]">
-          <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.5fr_0.95fr]">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} className="order-2 lg:order-1">
             <div className="mb-6 inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
               Disponível para oportunidades profissionais
             </div>
@@ -91,6 +91,18 @@ function App() {
               Estudante de Análise e Desenvolvimento de Sistemas pelo IFPB, com interesse em desenvolvimento back-end, arquitetura de dados, Java, JavaScript e soluções orientadas a desempenho, organização e qualidade.
             </p>
 
+            <div className="mt-10 grid gap-4 md:grid-cols-3">
+              {highlights.map(({ icon: Icon, title, text }) => (
+                <div key={title} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                    <Icon size={18} />
+                  </div>
+                  <p className="mb-1 text-sm font-semibold text-white">{title}</p>
+                  <p className="text-sm leading-relaxed text-gray-400">{text}</p>
+                </div>
+              ))}
+            </div>
+
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href="/Curriculo_09.2026.pdf"
@@ -99,6 +111,13 @@ function App() {
               >
                 <Download size={18} />
                 Baixar currículo
+              </a>
+              <a
+                href="mailto:juanjrg1427@gmail.com"
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition-all hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary/20"
+              >
+                Contato
+                <Mail size={18} />
               </a>
               <a
                 href="#projetos"
@@ -126,14 +145,60 @@ function App() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-            className="rounded-[2rem] border border-white/10 bg-[#0d0d0f] p-5 shadow-[0_20px_80px_rgba(59,130,246,0.12)]"
+            className="order-1 rounded-[2rem] border border-white/10 bg-[#0d0d0f] p-5 shadow-[0_20px_80px_rgba(59,130,246,0.12)] lg:order-2"
           >
-            <div className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-darker p-3">
+            <div className="overflow-hidden rounded-[1.8rem] border border-primary/20 bg-gradient-to-br from-primary/10 via-[#0d0d0f] to-transparent p-3 shadow-[0_12px_40px_rgba(59,130,246,0.15)]">
               <img
                 src={profileImage}
                 alt="Juan Rodrigues Gomes"
-                className="h-[420px] w-full rounded-[1.3rem] object-cover"
+                className="h-[420px] w-full rounded-[1.5rem] object-cover object-center ring-2 ring-white/10"
               />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="sobre-mim" className="bg-[#0d0d0f] px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <motion.h3
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="mb-12 flex items-center gap-3 text-3xl font-bold text-white"
+          >
+            <Sparkles className="text-primary" /> Sobre mim
+          </motion.h3>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]"
+          >
+            <div className="rounded-[2rem] border border-white/10 bg-darker p-8">
+              <p className="mb-4 text-lg leading-relaxed text-gray-300">
+                Sou uma pessoa curiosa, organizada e apaixonada por transformar ideias em soluções úteis. Desde cedo, me interesso por lógica, tecnologia e aprendizado contínuo, e isso me levou a buscar cada vez mais conhecimento em desenvolvimento de software, banco de dados e arquitetura de sistemas.
+              </p>
+              <p className="leading-relaxed text-gray-400">
+                O que me move é a possibilidade de criar soluções que resolvem problemas reais, melhorar processos e entregar resultados com qualidade, clareza e atenção aos detalhes. Acredito que tecnologia deve ser prática, eficiente e pensada para facilitar a vida das pessoas.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+              <div className="rounded-[1.5rem] border border-primary/20 bg-primary/10 p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(59,130,246,0.18)]">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Perfil</p>
+                <p className="mt-3 text-xl font-bold text-white">Curioso</p>
+              </div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-[#111214] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(255,255,255,0.08)]">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Estilo</p>
+                <p className="mt-3 text-xl font-bold text-white">Organizado</p>
+              </div>
+              <div className="rounded-[1.5rem] border border-white/10 bg-[#111214] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(255,255,255,0.08)]">
+                <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">Objetivo</p>
+                <p className="mt-3 text-xl font-bold text-white">Impactar</p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -159,7 +224,7 @@ function App() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
-                className="rounded-2xl border border-white/10 bg-darker px-5 py-4 text-center font-medium text-gray-300 transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary"
+                className="rounded-2xl border border-white/10 bg-darker px-5 py-4 text-center font-medium text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:text-primary hover:shadow-[0_14px_30px_rgba(59,130,246,0.12)]"
               >
                 {skill}
               </motion.div>
@@ -187,7 +252,7 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group rounded-[2rem] border border-white/10 bg-[#0d0d0f] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition-all hover:-translate-y-1 hover:border-primary/40"
+              className="group rounded-[2rem] border border-white/10 bg-[#0d0d0f] p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-[0_20px_45px_rgba(59,130,246,0.12)]"
             >
               <div className="mb-4 flex items-center justify-between">
                 <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">Projeto 0{index + 1}</span>
@@ -207,7 +272,7 @@ function App() {
                 ))}
               </div>
 
-              <a href={link} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-semibold text-white transition-colors hover:text-primary">
+              <a href={link} target="_blank" rel="noreferrer" className="inline-flex items-center text-sm font-semibold text-white transition-all duration-300 hover:text-primary group-hover:translate-x-1">
                 Ver no GitHub <ChevronRight size={16} className="ml-1" />
               </a>
             </motion.article>
@@ -227,29 +292,61 @@ function App() {
             <Server className="text-primary" /> Experiência
           </motion.h3>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="relative rounded-[2rem] border border-white/10 bg-darker p-8 pl-10"
-          >
-            <div className="absolute left-5 top-8 h-4 w-4 rounded-full bg-primary shadow-[0_0_20px_rgba(59,130,246,0.8)]"></div>
-            <h4 className="text-xl font-bold text-white">Assistente Administrativo</h4>
-            <h5 className="mb-2 text-lg text-gray-400">EMPAER-PB</h5>
-            <p className="mb-4 text-sm font-mono text-primary">Agosto 2024 - Dezembro 2024</p>
-            <ul className="ml-4 list-disc space-y-2 text-gray-400">
-              <li>Desenvolvimento de planilhas para controle e armazenamento de dados de agricultores do Seguro Safra.</li>
-              <li>Reestruturação do fluxo de documentos institucionais físicos e digitais, melhorando a eficiência.</li>
-              <li>Apoio na execução de rotinas administrativas e da resolução de problemas operacionais.</li>
-            </ul>
-          </motion.div>
+          <div className="space-y-8">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="relative rounded-[2rem] border border-white/10 bg-darker p-8 pl-10"
+            >
+              <div className="absolute left-5 top-8 h-4 w-4 rounded-full bg-primary shadow-[0_0_20px_rgba(59,130,246,0.8)]"></div>
+              <div className="mb-3 flex flex-wrap items-center justify-between gap-3">
+                <h4 className="text-xl font-bold text-white">Assistente Administrativo</h4>
+                <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                  Emprego recente
+                </span>
+              </div>
+              <h5 className="mb-2 text-lg text-gray-400">EMPAER-PB</h5>
+              <p className="mb-4 text-sm font-mono text-primary">Agosto 2024 - Dezembro 2024</p>
+              <ul className="ml-4 list-disc space-y-2 text-gray-400">
+                <li>Desenvolvimento de planilhas para controle e armazenamento de dados de agricultores do Seguro Safra.</li>
+                <li>Reestruturação do fluxo de documentos institucionais físicos e digitais, melhorando a eficiência.</li>
+                <li>Apoio na execução de rotinas administrativas e da resolução de problemas operacionais.</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              className="rounded-[2rem] border border-white/10 bg-[#0d0d0f] p-8"
+            >
+              <h4 className="mb-4 text-xl font-bold text-white">Perfil profissional</h4>
+              <div className="grid gap-5 md:grid-cols-2">
+                <div className="rounded-2xl border border-white/10 bg-darker p-5">
+                  <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary">Foco</p>
+                  <p className="text-gray-300">Desenvolvimento de soluções organizadas, práticas e de alto impacto para negócios e sistemas.</p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-darker p-5">
+                  <p className="mb-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary">Competências</p>
+                  <p className="text-gray-300">Back-end, Java, SQL, JavaScript, banco de dados, organização de dados e automação de processos.</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      <footer className="border-t border-white/5 px-6 py-8 text-center text-sm text-gray-500">
-        <p>Projetado e desenvolvido para Juan Rodrigues Gomes.</p>
-        <p className="mt-2">(83) 99675-0471 | juanjrg1427@gmail.com</p>
+      <footer className="border-t border-white/5 px-6 py-10 text-center text-sm text-gray-500">
+        <p className="text-base text-gray-300">Projetado e desenvolvido para Juan Rodrigues Gomes.</p>
+        <p className="mt-3 text-gray-400">(83) 99675-0471 | juanjrg1427@gmail.com</p>
+        <div className="mt-5 flex justify-center gap-3">
+          <a href="mailto:juanjrg1427@gmail.com" className="rounded-full border border-primary/30 bg-primary/10 px-4 py-2 font-medium text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/20">Email</a>
+          <a href="https://github.com/JuanRodrigues-Dev" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary">GitHub</a>
+          <a href="https://www.linkedin.com/in/juanrgomes" target="_blank" rel="noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary">LinkedIn</a>
+        </div>
       </footer>
     </div>
   );
