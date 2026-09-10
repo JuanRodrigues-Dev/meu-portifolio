@@ -1,16 +1,23 @@
-# Meu Portfólio
+# Juan Rodrigues Gomes
 
-Portfólio pessoal desenvolvido com React + Vite para apresentar minha trajetória profissional, habilidades técnicas e principais projetos.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React 19" />
+  <img src="https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite" alt="Vite 8" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/Status-Portfolio-00C851?style=for-the-badge" alt="Portfolio" />
+</p>
 
-## Visão geral
+Portfólio pessoal e profissional desenvolvido com React e Vite, com foco em apresentar minha trajetória, stack tecnológica, projetos e formas de contato.
 
-Este projeto funciona como uma página de apresentação digital, com foco em:
+## Sobre o projeto
 
-- destaque de competências e stack
-- apresentação de projetos e experiências
-- links diretos para GitHub e LinkedIn
-- fácil manutenção e atualização de conteúdo
-- layout moderno e responsivo
+Este site funciona como uma vitrine digital para mostrar:
+
+- habilidades técnicas e competências
+- experiência profissional e formação
+- projetos relevantes desenvolvidos
+- links para GitHub, LinkedIn e outros canais de contato
+- apresentação visual moderna e responsiva
 
 ## Tecnologias utilizadas
 
@@ -24,16 +31,16 @@ Este projeto funciona como uma página de apresentação digital, com foco em:
 ## Funcionalidades
 
 - interface moderna e responsiva
-- seções dedicadas a perfil profissional e habilidades
-- apresentação visual dos projetos
-- navegação simples e intuitiva
-- preparação para deploy via GitHub Pages
+- layout limpo e profissional
+- apresentação clara de informações pessoais e técnicas
+- navegação intuitiva
+- estrutura pronta para deploy em GitHub Pages
 
 ## Pré-requisitos
 
-Antes de rodar o projeto, certifique-se de ter instalado:
+Antes de iniciar, certifique-se de ter instalado:
 
-- Node.js 18 ou superior
+- Node.js 18+
 - npm
 
 ## Como executar localmente
@@ -62,7 +69,7 @@ npm install
 npm run dev
 ```
 
-5. Abra no navegador:
+5. Acesse no navegador:
 
 ```bash
 http://localhost:5173/
@@ -74,19 +81,15 @@ http://localhost:5173/
 npm run build
 ```
 
-## Deploy no GitHub Pages
+## Deploy
 
-O projeto está configurado para publicação no GitHub Pages.
-
-1. Certifique-se de que o repositório no GitHub exista com o nome:
-   - `meu-portfolio`
-2. Execute o comando:
+O projeto está preparado para publicação no GitHub Pages.
 
 ```bash
 npm run deploy
 ```
 
-3. A aplicação ficará disponível em:
+A aplicação ficará disponível em:
 
 ```bash
 https://JuanRodrigues-Dev.github.io/meu-portfolio/
@@ -102,7 +105,8 @@ meu-portfolio/
 ├── package.json
 ├── vite.config.js
 ├── README.md
-└── .gitignore
+├── .gitignore
+└── dist/ (gerado após build)
 ```
 
 ## Contato
@@ -113,5 +117,9 @@ meu-portfolio/
 
 ## Licença
 
-Este projeto foi criado para uso pessoal e profissional como portfólio.
+Este projeto foi desenvolvido para uso pessoal e profissional como portfólio.
+
+## Status
+
+Em desenvolvimento e em constante atualização.
 
